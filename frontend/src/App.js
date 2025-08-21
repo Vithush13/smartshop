@@ -16,7 +16,10 @@ import { useEffect } from 'react';
 import { loadUser } from './actions/userActions';
 import Profile from './components/user/Profile';
 import ProtectRoute from './components/route/protectRoute';
-
+import UpdateProfile from './components/user/updateProfile';
+import UpdatePassword from './components/user/updatePassword';
+import Shop from './components/product/shop';
+import About from './components/about';
 
 
 function App() {
@@ -37,8 +40,12 @@ function App() {
         <Route path='/search/:keyword' element={<ProductSearch/>} />
         <Route path='/product/:id' element={<ProductDetail/>} />
         <Route path='/login' element={<Login/>} />
+        <Route path='/shop' element={<Shop/>} />
+        <Route path='/about' element={<About/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='/myprofile' element={<ProtectRoute><Profile/></ProtectRoute>} />
+         <Route path='/myprofile/update' element={<ProtectRoute><UpdateProfile/></ProtectRoute> } />
+         <Route path='/myprofile/update/password' element={<ProtectRoute><UpdatePassword/></ProtectRoute> } />
       </Routes>
       </div>
       <Footer/>

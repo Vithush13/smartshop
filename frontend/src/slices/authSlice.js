@@ -91,6 +91,50 @@ const authSlice = createSlice({
                 
             }
         },
+        updateProfileRequest(state, action){
+            return {
+                ...state,
+                loading: true,
+                isUpdated: false
+            }
+        },
+        updateProfileSuccess(state, action){
+            return {
+                ...state,
+                loading: false,
+                user: action.payload.user,
+                isUpdated: true
+            }
+        },
+        updateProfileFail(state, action){
+            return {
+                ...state,
+                loading: false,
+                error:  action.payload
+            }
+        },
+
+         updatePasswordRequest(state, action){
+            return {
+                ...state,
+                loading: true,
+                isUpdated: false
+            }
+        },
+        updatePasswordSuccess(state, action){
+            return {
+                ...state,
+                loading: false,
+                isUpdated: true
+            }
+        },
+        updatePasswordFail(state, action){
+            return {
+                ...state,
+                loading: false,
+                error:  action.payload
+            }
+        },
     }
 })
 const {actions,reducer} = authSlice;    //destructrue method
@@ -105,6 +149,8 @@ export const{
     loadUserRequest,
     loadUserSuccess,
     loadUserFail,
-    logoutFail,logoutSuccess
+    logoutFail,logoutSuccess,
+    updateProfileRequest,updateProfileSuccess,updateProfileFail,
+    updatePasswordFail,updatePasswordSuccess,updatePasswordRequest
 } = actions;
 export default reducer;
