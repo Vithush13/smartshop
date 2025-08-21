@@ -1,31 +1,33 @@
-export default function Profile (){
+import { useSelector } from "react-redux"
 
+export default function Profile (){
+    const {user} =useSelector(state => state.authState);
     return(
       
-    <div class="container container-fluid">
-        <h2 class="mt-5 ml-5">My Profile</h2>
-        <div class="row justify-content-around mt-5 user-info">
-            <div class="col-12 col-md-3">
-                <figure class='avatar avatar-profile'>
-                    <img class="rounded-circle img-fluid" src='./images/profile.jpg' alt='' />
+    <div className="container container-fluid">
+        <h2 className="mt-5 ml-5">My Profile</h2>
+        <div className="row justify-content-around mt-5 user-info">
+            <div className="col-12 col-md-3">
+                <figure className='avatar avatar-profile'>
+                    <img className="rounded-circle img-fluid" src={user.avatar ?? "./images/default_avatar.png"} alt='' />
                 </figure>
-                <a href="#" id="edit_profile" class="btn btn-primary btn-block my-5">
+                <a href="#" id="edit_profile" className="btn btn-primary btn-block my-5">
                     Edit Profile
                 </a>
             </div>
      
-            <div class="col-12 col-md-5">
+            <div className="col-12 col-md-5">
                  <h4>Full Name</h4>
-                 <p>JV Logesh</p>
+                 <p>{user.name}</p>
      
                  <h4>Email Address</h4>
-                 <p>jvlcodevideos@gmail.com</p>
+                 <p>{user.email}</p>
 
-                 <a href="#" class="btn btn-danger btn-block mt-5">
+                 <a href="#" className="btn btn-danger btn-block mt-5">
                     My Orders
                 </a>
 
-                <a href="#" class="btn btn-primary btn-block mt-3">
+                <a href="#" className="btn btn-primary btn-block mt-3">
                     Change Password
                 </a>
             </div>

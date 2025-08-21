@@ -42,7 +42,7 @@ export const loadUser =  async(dispatch) =>{
     try{
         dispatch(loadUserRequest())   //sent data to reducer
        
-        const {data} = await axios.post(`/api/v1/myprofile`);
+        const {data} = await axios.get(`/api/v1/myprofile`);
         dispatch(loadUserSuccess(data))
     } catch (error){
         dispatch(loadUserFail(error.response.data.message))
