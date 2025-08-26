@@ -4,11 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Dropdown, Image } from "react-bootstrap";
 import { logout } from "../../actions/userActions";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Header() {
   const { isAuthenticated, user } = useSelector((state) => state.authState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {items:cartItems} = useSelector(state=> state.cartState)
 
   const logoutHandler = () => {
     dispatch(logout);
@@ -59,10 +61,10 @@ export default function Header() {
       {/* Cart + Auth */}
       <div className="col-12 col-md-2 mt-3 mt-md-0 text-center">
         <Link to="/cart" id="cart" className="ml-3 text-light">
-          Cart
+          <FaShoppingCart size={22} />
         </Link>
-        <span className="ml-1 " id="cart_count">
-          2
+        <span className="ml-2 " id="cart_count">
+          {cartItems.length}
         </span>
 
         {isAuthenticated ? (

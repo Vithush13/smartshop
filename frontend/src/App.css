@@ -61,10 +61,11 @@ nav {
 #cart_count {
   background-color: #16f5a3;
   padding: 0.2rem 0.5rem;
-  border-radius: 0.2rem;
+  border-radius: 50% ;
   color: black;
   font-weight: bold;
   font-size: 0.9rem;
+  
 }
 
 /* Home page */
@@ -245,15 +246,15 @@ footer {
 }
 
 #card_item_price {
-  color: #febd69;
+  color:#16f5a3;
   font-weight: bold;
   font-size: 1.4rem;
 }
 
 #checkout_btn,
 .review-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #13c116;
+  border-color:  #13c116;
   margin-top: 2rem;
   border-radius: 5rem;
 }
@@ -396,7 +397,7 @@ footer {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #5190ef;
   color: #fff;
 }
 
@@ -404,7 +405,7 @@ footer {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid #5190ef;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -412,9 +413,9 @@ footer {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
+  border-top: 20px solid #5190ef;
   border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  border-bottom: 20px solid #5190ef;
   margin-right: -1px;
 }
 
@@ -454,8 +455,8 @@ footer {
 }
 
 #edit_profile {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color:  #13c116;
+  border-color:  #13c116;
 }
 
 /* Confirm Order */
@@ -623,3 +624,19 @@ ul.CTAs a {
   font-size: 0.8rem;
   color: grey;
 }
+
+
+
+
+.custom-datatable table {
+  font-size: 0.95rem;
+}
+.custom-datatable td {
+  vertical-align: middle;
+}
+
+.custom-datatable tr:hover {
+  background-color: #f1fdf9 !important;
+}
+
+

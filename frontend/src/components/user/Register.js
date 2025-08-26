@@ -56,7 +56,7 @@ export default function Register(){
                       })
                       return
                  }
-            },[error,isAuthenticated,navigate])
+            },[error,isAuthenticated,navigate,dispatch])
 
     return(
         <div className="row wrapper">

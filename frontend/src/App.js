@@ -20,6 +20,13 @@ import UpdateProfile from './components/user/updateProfile';
 import UpdatePassword from './components/user/updatePassword';
 import Shop from './components/product/shop';
 import About from './components/about';
+import Cart from './components/cart/cart';
+import Shipping from './components/cart/shipping';
+import ConfirmOrder from './components/cart/confirmOrder';
+import Payment from './components/cart/payment';
+import OrderSuccess from './components/cart/orderSuccess';
+import UserOrders from './components/order/userOrder';
+import OrderDetail from './components/order/orderDetails';
 
 
 function App() {
@@ -46,7 +53,15 @@ function App() {
         <Route path='/myprofile' element={<ProtectRoute><Profile/></ProtectRoute>} />
          <Route path='/myprofile/update' element={<ProtectRoute><UpdateProfile/></ProtectRoute> } />
          <Route path='/myprofile/update/password' element={<ProtectRoute><UpdatePassword/></ProtectRoute> } />
+        <Route path='/cart' element={<Cart/>} />
+        <Route path='/shipping' element={<ProtectRoute><Shipping/></ProtectRoute> } />
+        <Route path='/order/confirm' element={<ProtectRoute><ConfirmOrder/></ProtectRoute> } />
+        <Route path='/payment' element={<ProtectRoute><Payment/></ProtectRoute> } />
+        <Route path='/order/success' element={<ProtectRoute><OrderSuccess/></ProtectRoute> } />
+        <Route path='/orders' element={<ProtectRoute><UserOrders/></ProtectRoute> } />
+        <Route path='/order/:id' element={<ProtectRoute><OrderDetail/></ProtectRoute> } />
       </Routes>
+      
       </div>
       <Footer/>
       </HelmetProvider>

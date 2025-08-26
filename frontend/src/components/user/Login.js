@@ -3,7 +3,7 @@ import MetaData from "../layouts/Meta";
 import { clearAuthError, login } from "../../actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate ,Link,useLocation} from "react-router-dom";
 
 
 
@@ -12,7 +12,9 @@ export default function Login(){
     const[password,setPassword] = useState("")
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
     const { loading,error,isAuthenticated } = useSelector(state => state.authState)  //login button disabled
+     const redirect = location.search?'/'+location.search.split('=')[1]:'/';
 
     const submitHandler = (e)=>{
         e.preventDefault();  //disconnect refresh
@@ -20,7 +22,7 @@ export default function Login(){
     }
     useEffect(()=>{            //after the loading callfuntion - show error
          if(isAuthenticated){
-            navigate('/')
+            navigate(redirect)
          }
         if(error){
               toast(error,{
@@ -31,7 +33,7 @@ export default function Login(){
               })
               return
          }
-    },[error,dispatch,isAuthenticated,dispatch])
+    },[error,dispatch,isAuthenticated,dispatch,navigate])
     return(
         <Fragment>
             <MetaData title={`Login`}/>
