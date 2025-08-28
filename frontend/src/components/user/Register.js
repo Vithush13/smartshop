@@ -113,7 +113,7 @@ export default function Register(){
                           id='customFile'
                       />
                       <label className='custom-file-label' htmlFor='customFile'>
-                          Choose Avatar
+                          Choose Profile Photo
                       </label>
                   </div>
               </div>
