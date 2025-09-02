@@ -508,7 +508,7 @@ footer {
 #sidebar {
   min-width: 100%;
   max-width: 100%;
-  background: #232f3e;
+  background:  #0f2a4a;
   color: #fff;
   transition: all 0.3s;
 }
@@ -534,9 +534,13 @@ footer {
 }
 #sidebar ul li a:hover {
   color: #232f3e;
-  background: #fff;
+  background: #1abc9c;
 }
 
+#sidebar ul li div.dropdown-menu a {
+  color: #232f3e;
+  
+}
 #sidebar ul li a i {
   margin-right: 0.3rem;
 }
@@ -574,6 +578,17 @@ ul.CTAs a {
   border-radius: 5px;
   margin-bottom: 5px;
 }
+/* Dropdown menu */
+.dropdown-menu {
+  background: #fff;
+  border: none;
+  padding: 0;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: #1abc9c !important;
+  color: #fff !important;
+}
 
 /* Products List Admin */
 #products_table .btn {
@@ -583,9 +598,29 @@ ul.CTAs a {
 
 /* Dashboard */
 
-.card-font-size {
-  font-size: 1.5rem;
+/* Wrapper */
+.dashboard-wrapper {
+  background-color: #f8f9fa;
+  min-height: 100vh;
 }
+
+.sidebar-col {
+  background: #222;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.main-col {
+  padding: 2rem;
+}
+
+/* Gradient backgrounds */
+
+.gradient-success {
+  background: linear-gradient(135deg, #0a9f81 0%, #2ff0ca 100%);
+}
+
+
 
 /* Reviews */
 
@@ -721,5 +756,9 @@ ul.CTAs a {
   margin-top: 0.5rem;
   line-height: 1.5;
 }
+
+
+
+
 
 

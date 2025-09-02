@@ -68,7 +68,7 @@ export default function Header() {
         </span>
 
         {isAuthenticated ? (
-          <Dropdown className="d-inline ml-3">
+          <Dropdown className="d-inline ml-2">
             <Dropdown.Toggle
               variant="default text-light pr-5"
               id="dropdown-basic"
@@ -84,13 +84,19 @@ export default function Header() {
                 />
               </figure>
             </Dropdown.Toggle>
-            <Dropdown.Menu>
+            <Dropdown.Menu align="end"  style={{ marginRight: "35px" }} >
               <Dropdown.Item
                 onClick={() => navigate("/myprofile")}
                 className="text-dark"
               >
                 Profile
               </Dropdown.Item>
+             {user.role === "admin" && <Dropdown.Item
+                onClick={() => navigate("/dashboard")}
+                className="text-dark"
+              >
+                Dashboard
+              </Dropdown.Item>}
               <Dropdown.Item
                 onClick={logoutHandler}
                 className="text-danger font-weight-bold"

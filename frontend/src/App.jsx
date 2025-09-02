@@ -27,6 +27,7 @@ import Payment from './components/cart/payment';
 import OrderSuccess from './components/cart/orderSuccess';
 import UserOrders from './components/order/userOrder';
 import OrderDetail from './components/order/orderDetails';
+import Dashboard from './admin/dashboard';
 
 
 function App() {
@@ -63,6 +64,11 @@ function App() {
       </Routes>
       
       </div>
+
+       <Routes>
+                  <Route path='/dashboard' element={ <ProtectRoute isAdmin={true}><Dashboard/></ProtectRoute> } />
+                  
+                </Routes>
       <Footer/>
       </HelmetProvider>
     </div>

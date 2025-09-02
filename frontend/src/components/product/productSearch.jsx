@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../actions/productsActions";
 import MetaData from "../layouts/Meta";
 import Loader from "../layouts/Loader";
-import Product from "../product/product";
+import Product from "./product";
 import  Pagination  from "react-js-pagination";
 import { useParams } from "react-router-dom";
 import Slider from "rc-slider";

@@ -1,15 +1,15 @@
 import { Fragment, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
-import { createReview, getProduct } from "../../actions/productActions"
-import Loader from '../layouts/Loader';
+import { createReview, getProduct } from "../../actions/productActions.jsx"
+import Loader from '../layouts/Loader.jsx';
 import { Carousel } from 'react-bootstrap';
-import MetaData from "../layouts/Meta";
-import { addCartItem } from "../../actions/cartAction";
-import {clearReviewSubmitted, clearError, clearProduct} from '../../slices/productSlice';
+import MetaData from "../layouts/Meta.jsx";
+import { addCartItem } from "../../actions/cartAction.jsx";
+import {clearReviewSubmitted, clearError, clearProduct} from '../../slices/productSlice.jsx';
 import {Modal} from 'react-bootstrap';
 import { toast } from "react-toastify";
-import ProductReview from "./productReview.js";
+import ProductReview from "./productReview.jsx";
 
 
 export default function ProductDetail () {
