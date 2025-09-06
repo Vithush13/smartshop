@@ -28,6 +28,8 @@ import OrderSuccess from './components/cart/orderSuccess';
 import UserOrders from './components/order/userOrder';
 import OrderDetail from './components/order/orderDetails';
 import Dashboard from './admin/dashboard';
+import ProductList from './admin/productList';
+import NewProduct from './admin/newProduct';
 
 
 function App() {
@@ -67,7 +69,8 @@ function App() {
 
        <Routes>
                   <Route path='/dashboard' element={ <ProtectRoute isAdmin={true}><Dashboard/></ProtectRoute> } />
-                  
+                  <Route path='/admin/products' element={ <ProtectRoute isAdmin={true}><ProductList/></ProtectRoute> } />
+                  <Route path='/admin/products/create' element={ <ProtectRoute isAdmin={true}><NewProduct/></ProtectRoute> } />
                 </Routes>
       <Footer/>
       </HelmetProvider>

@@ -757,6 +757,80 @@ ul.CTAs a {
   line-height: 1.5;
 }
 
+ /* productList*/
+.custom-table table {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(8, 240, 8, 0.1);
+}
+
+/* Header */
+.custom-table thead {
+  background: linear-gradient(90deg, #3574d2 0%, #5b9ee1 100%);
+  color: #fff !important;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Header cells */
+.custom-table th {
+  padding: 14px;
+  font-weight: bold;
+  border: none !important;
+}
+
+/* Table body */
+.custom-table td {
+  padding: 12px;
+  border-color: #dbeafe !important; /* light blue border */
+  vertical-align: middle;
+}
+
+/* Zebra rows */
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f0f8ff; /* AliceBlue */
+}
+
+/* Row hover */
+.custom-table tbody tr:hover {
+  background-color: #dbeafe !important; /* Light blue hover */
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Active row (when selected/highlighted) */
+.custom-table tbody tr:active {
+  background-color: #93c5fd !important; /* Soft sky blue */
+}
+/* General button style (common) */
+.custom-table .btn {
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+/* Edit button (blue) */
+.custom-table .btn-primary {
+  background-color: #0d6efd; /* Bootstrap primary blue */
+}
+
+.custom-table .btn-primary:hover {
+  background-color: #0b5ed7; /* darker blue */
+}
+
+/* Delete button (red) */
+.custom-table .btn-danger {
+  background-color: #dc3545; /* Bootstrap danger red */
+}
+
+.custom-table .btn-danger:hover {
+  background-color: #bb2d3b; /* darker red */
+}
 
 
 

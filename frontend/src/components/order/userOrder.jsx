@@ -94,7 +94,7 @@ export default function UserOrders() {
                 My Orders
             </h1>
             <MDBDataTable
-                className='px-3 custom-table'
+                className='px-3 '
                 bordered
                 striped
                 hover

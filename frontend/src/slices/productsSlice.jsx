@@ -53,5 +53,5 @@ const productsSlice = createSlice({
     }
 })
 const {actions,reducer} = productsSlice;    //destructrue method
-export const{productsRequest,productsSuccess,productsFail,adminProductsFail,adminProductsRequest,adminProductsSuccess} = actions;
+export const{productsRequest,productsSuccess,productsFail,adminProductsFail,adminProductsRequest,adminProductsSuccess,clearError} = actions;
 export default reducer;
