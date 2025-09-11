@@ -27,7 +27,7 @@ export default function Shop() {
           <MetaData title="Shop" />
 
           {/* --- Latest Products Section (Existing Code) --- */}
-          <h1 id="products_heading">Latest Products</h1>
+          <h1 id="products_heading">Popular Products</h1>
           <section id="products" className="container mt-5">
             <div className="row">
               {products && products.map(product => (
