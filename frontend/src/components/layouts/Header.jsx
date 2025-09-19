@@ -19,7 +19,8 @@ export default function Header() {
   return (
     <nav
       className="navbar row p-3"
-      style={{ backgroundColor: "#0f2a4a" }} // Navbar background
+      style={{ backgroundColor: "#0f2a4a", boxShadow: "0 4px 8px rgba(0,0,0,0.25)" }} // Navbar background
+      
     >
       {/* Brand / Logo */}
       <div className="col-12 col-md-2">

@@ -17,7 +17,7 @@ export default function ProductSearch() {
   const dispatch = useDispatch();
   const{products,loading,productsCount,resPerPage} = useSelector((state)=> state.productsState)
   const[currentPage,setCurrentPage] = useState(1);
-  const[price,setPrice] = useState([1,1000]);
+  const[price,setPrice] = useState([1,100000]);
   const[priceChanged,setPriceChanged] = useState(price);
   const[category,setCategory] = useState(null);
   const {keyword} = useParams();
@@ -58,12 +58,12 @@ export default function ProductSearch() {
                                 range={true}
                                 marks={
                                   {
-                                    1:"$1",
-                                    1000:"$1000"
+                                    1:"Rs.1",
+                                    1000000:"Rs.1000000"
                                   }
                                 }
                                 min={1}
-                                max={1000}
+                                max={1000000}
                                 defaultValue={price}
                                 onChange={(price)=>{
                                   setPrice(price)
@@ -71,7 +71,7 @@ export default function ProductSearch() {
                                 handleRender={
                                   renderProp =>{
                                     return(
-                                      <Tooltip overlay={`$${renderProp.props['aria-valuenow']}`}>
+                                      <Tooltip overlay={`${renderProp.props['aria-valuenow']}`}>
                                          <div{...renderProp.props}></div>
                                       </Tooltip>
                                     )
