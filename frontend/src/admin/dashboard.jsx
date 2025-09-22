@@ -39,7 +39,7 @@ export default function Dashboard() {
             <div className="card shadow-lg gradient-success h-100">
               <div className="card-body d-flex flex-column justify-content-center align-items-center">
                 <h4 className="text-white">Total Revenue</h4>
-                <h2 className="text-white mt-2">$50,000</h2>
+                <h2 className="text-white mt-2">Rs.50,000</h2>
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ const orderSlice = createSlice({
         orderDetail: {},
         userOrders : [],
         loading: false,
+        adminOrders: [],
         isOrderDeleted: false,
         isOrderUpdated: false
     },
@@ -78,6 +79,80 @@ const orderSlice = createSlice({
                 error: action.payload
             }
         },
+        adminOrdersRequest(state, action) {
+            return {
+                ...state,
+                loading: true
+            }
+        },
+        adminOrdersSuccess(state, action) {
+            return {
+                ...state,
+                loading: false,
+                adminOrders: action.payload.orders
+            }
+        },
+        adminOrdersFail(state, action) {
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+        },
+        deleteOrderRequest(state, action) {
+            return {
+                ...state,
+                loading: true
+            }
+        },
+        deleteOrderSuccess(state, action) {
+            return {
+                ...state,
+                loading: false,
+                isOrderDeleted: true
+            }
+        },
+        deleteOrderFail(state, action) {
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+        },
+         updateOrderRequest(state, action) {
+            return {
+                ...state,
+                loading: true
+            }
+        },
+        updateOrderSuccess(state, action) {
+            return {
+                ...state,
+                loading: false,
+                isOrderUpdated: true
+            }
+        },
+        updateOrderFail(state, action) {
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+        },
+        
+        clearOrderDeleted(state, action) {
+            return {
+                ...state,
+                isOrderDeleted: false
+            }
+        },
+        clearOrderUpdated(state, action) {
+            return {
+                ...state,
+                isOrderUpdated: false
+            }
+        }
+
 
     }
 });
@@ -89,7 +164,8 @@ export const {
     createOrderSuccess,
     createOrderRequest,
     clearError,userOrdersRequest,userOrdersSuccess,userOrdersFail,
-    orderDetailRequest,orderDetailSuccess,orderDetailFail
+    orderDetailRequest,orderDetailSuccess,orderDetailFail,adminOrdersFail,adminOrdersRequest,adminOrdersSuccess,deleteOrderFail,deleteOrderRequest,deleteOrderSuccess,
+    updateOrderFail,updateOrderRequest,updateOrderSuccess,clearOrderDeleted,clearOrderUpdated
  } = actions;
 
 export default reducer;
