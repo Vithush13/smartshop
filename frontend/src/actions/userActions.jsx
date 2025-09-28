@@ -5,6 +5,10 @@ import { loginFail,loginRequest,loginSuccess,clearError,
          updatePasswordFail,updatePasswordRequest,updatePasswordSuccess
  } from "../slices/authSlice";
 
+ import { userRequest,userFail,userSuccess,usersRequest,usersFail,usersSuccess,deleteUserFail,deleteUserRequest,deleteUserSuccess,
+       updateUserFail,updateUserRequest,updateUserSuccess
+  } from "../slices/userSlice";
+
 export const login = (email,password) => async(dispatch) =>{
 
     try{
@@ -95,3 +99,55 @@ export const updatePassword = (formData) => async (dispatch) => {
 
 }
 
+export const getUsers =  async (dispatch) => {
+
+    try {
+        dispatch(usersRequest())
+        const { data }  = await axios.get(`/api/v1/admin/users`);
+        dispatch(usersSuccess(data))
+    } catch (error) {
+        dispatch(usersFail(error.response.data.message))
+    }
+
+}
+
+export const getUser = id => async (dispatch) => {
+
+    try {
+        dispatch(userRequest())
+        const { data }  = await axios.get(`/api/v1/admin/user/${id}`);
+        dispatch(userSuccess(data))
+    } catch (error) {
+        dispatch(userFail(error.response.data.message))
+    }
+
+}
+
+export const deleteUser = id => async (dispatch) => {
+
+    try {
+        dispatch(deleteUserRequest())
+        await axios.delete(`/api/v1/admin/user/${id}`);
+        dispatch(deleteUserSuccess())
+    } catch (error) {
+        dispatch(deleteUserFail(error.response.data.message))
+    }
+
+}
+
+export const updateUser = (id, formData) => async (dispatch) => {
+
+    try {
+        dispatch(updateUserRequest())
+        const config = {
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }
+        await axios.put(`/api/v1/admin/user/${id}`, formData, config);
+        dispatch(updateUserSuccess())
+    } catch (error) {
+        dispatch(updateUserFail(error.response.data.message))
+    }
+
+}
